@@ -29,6 +29,9 @@ public class FormPage {
     private By elementBotonAddC2 = By.id("add");
     private By elementBotonSiguiente4 = By.id("control_btn_checkout_footer");
     private By elementBotonRecibeCasa2 = By.className("container-img-shipping-house");;
+    private By elemenBotonArmalo = By.linkText("AT&T Ármalo");
+    private By elementBotonEquipoP = By.className("img-equipo-propio");
+    private By elementBotonAttArmalo = By.className("sticker-phone");
 
     public FormPage(WebDriver driver) {
 
@@ -222,6 +225,17 @@ public class FormPage {
     public void clickBotonAtt2() {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("https://tienda.att.com.mx/");
+    }
+    public void clickBotonArmalo(){
+        driver.findElement(elemenBotonArmalo).click();
+    }
+    public void clickBotonEquipoP(){
+        driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+        driver.findElement(elementBotonEquipoP).click();
+    }
+    public void clickBotonAttArmalo(){
+        driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+        driver.findElement(elementBotonAttArmalo).click();
     }
 }
 
