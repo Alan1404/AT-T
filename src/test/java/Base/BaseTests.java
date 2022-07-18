@@ -16,7 +16,8 @@ public class BaseTests {
     @BeforeClass
     public void SetUp(){
         ChromeOptions options = new ChromeOptions();
-        System.setProperty("webdriver.chrome.driver", "C:/Users/SPARTAN PC/Downloads/chromedriver_v103/chromedriver.exe");
+        //options.setBinary("C:\\Program Files\\Google\\Chrome Beta\\Application\\chrome.exe");
+        System.setProperty("webdriver.chrome.driver","resources/chromedriver.exe");
         ChromeDriver driver = new ChromeDriver();
         driver.get("https://tienda.att.com.mx/");
         driver.get(
