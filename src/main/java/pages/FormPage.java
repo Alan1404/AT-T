@@ -45,10 +45,18 @@ public class FormPage {
     }
 
     public void setFirstName(String firstName) {
+        String jsSyyle = "'3px solid green'";
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].style.border=" + jsSyyle, driver.findElement(locateFieldById("email")));
+        
         driver.findElement(locateFieldById("email")).sendKeys(firstName);
     }
 
     public void setLastName(String lastName) {
+        String jsSyyle = "'3px solid green'";
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].style.border=" + jsSyyle, driver.findElement(locateFieldById("pass")));
+
         driver.findElement(locateFieldById("pass")).sendKeys(lastName);
     }
 
