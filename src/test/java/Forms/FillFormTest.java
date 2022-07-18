@@ -42,5 +42,8 @@ public class FillFormTest extends BaseTests {
         formPage.setReferencias2("Casa blanca");
         formPage.clickBotonSiguiente6();
         formPage.clickBotonAtt2();
+        formPage.clickBotonArmalo();
+        formPage.clickBotonEquipoP();
+        formPage.clickBotonAttArmalo();
     }
 }
