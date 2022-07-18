@@ -6,11 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="ATT" />
+        <module name="Pruebas generales" />
         <module name="Proyecto2" />
         <module name="Proyecto4" />
         <module name="Formulario completo" />
         <module name="Protecto3" />
-        <module name="Pruebas generales" />
         <module name="AT&amp;T" />
       </profile>
     </annotationProcessing>

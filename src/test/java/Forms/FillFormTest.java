@@ -33,7 +33,7 @@ public class FillFormTest extends BaseTests {
         formPage.clickBotonSimplePlus();
         formPage.clickBoton18meses();
         formPage.clickBotonAddC2();
-        /*formPage.clickBotonProcederPago2();
+        formPage.clickBotonProcederPago2();
         formPage.clickBotonSiguiente4();
         formPage.clickBotonRecibeCasa2();
         formPage.clickBotonSiguiente5();
@@ -41,6 +41,6 @@ public class FillFormTest extends BaseTests {
         formPage.setNoInterior2("412");
         formPage.setReferencias2("Casa blanca");
         formPage.clickBotonSiguiente6();
-        formPage.clickBotonAtt2();*/
+        formPage.clickBotonAtt2();
     }
 }

@@ -168,6 +168,8 @@ public class FormPage {
         WebElement element = wait.until(ExpectedConditions.elementToBeClickable(elementBotonSimplePlus));
         driver.findElement(elementBotonSimplePlus).click();
         driver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollTo(0, document.querySelector(\".set-package\").scrollHeight+300);");
     }
     public void clickBoton18meses(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
@@ -178,7 +180,7 @@ public class FormPage {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement element = wait.until(ExpectedConditions.elementToBeClickable(elementBotonAddC2));
         driver.findElement(elementBotonAddC2).click();}
-    /*public void clickBotonProcederPago2(){
+    public void clickBotonProcederPago2(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement element = wait.until(ExpectedConditions.elementToBeClickable(elementBotonProcederPago));
         driver.findElement(elementBotonProcederPago).click();
@@ -220,7 +222,7 @@ public class FormPage {
     public void clickBotonAtt2() {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get("https://tienda.att.com.mx/");
-    }*/
+    }
 }
 
 
