@@ -13,7 +13,11 @@ import java.util.concurrent.TimeUnit;
 public class FormPage {
     WebDriver driver;
 
+    // Login Form
+    private By elementEmailInput= By.id("email");
+    private By elementPasswordInput= By.id("pass");
     private By elementSubmitButton = By.id("send2");
+    // Primer flujo : Prepago
     private By elementBotonCelulares = By.linkText("Celulares");
     private By elementBotonModelo = By.cssSelector("#amasty-shopby-product-list > div.products.wrapper.grid.products-grid > ol > li:nth-child(1) > div.product-item-info > a > span > span > img");
     private By elementBotonPrepago = By.cssSelector("#plan-att > div > div.select-dropdown-item.set-package.selected");
@@ -47,57 +51,63 @@ public class FormPage {
         return By.name(name);
     }
 
-    public void setFirstName(String firstName) {
+    public void drawBorder(By element ){
         String jsSyyle = "'3px solid green'";
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].style.border=" + jsSyyle, driver.findElement(locateFieldById("email")));
-        
-        driver.findElement(locateFieldById("email")).sendKeys(firstName);
+        js.executeScript("arguments[0].style.border=" + jsSyyle,driver.findElement(element));
+    }
+    public void setFirstName(String firstName) {
+        drawBorder(elementEmailInput);
+        driver.findElement(elementEmailInput).sendKeys(firstName);
     }
 
     public void setLastName(String lastName) {
-        String jsSyyle = "'3px solid green'";
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("arguments[0].style.border=" + jsSyyle, driver.findElement(locateFieldById("pass")));
-
-        driver.findElement(locateFieldById("pass")).sendKeys(lastName);
+        drawBorder(elementPasswordInput);
+        driver.findElement(elementPasswordInput).sendKeys(lastName);
     }
 
     public void clickSubmitButton() {
+        drawBorder(elementSubmitButton);
         driver.findElement(elementSubmitButton).click();
     }
 
     public void clickBotonCelulares() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement element = wait.until(ExpectedConditions.elementToBeClickable(elementBotonCelulares));
+        drawBorder(elementBotonCelulares);
         driver.findElement(elementBotonCelulares).click();
     }
 
     public void clickBotonElemento() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement element = wait.until(ExpectedConditions.elementToBeClickable(elementBotonModelo));
+        drawBorder(elementBotonModelo);
         driver.findElement(elementBotonModelo).click();
     }
 
     public void clickBotonPrepago() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement element = wait.until(ExpectedConditions.elementToBeClickable(elementBotonPrepago));
+        drawBorder(elementBotonPrepago);
         driver.findElement(elementBotonPrepago).click();
     }
 
     public void clickBotonAddC() {
+        drawBorder(elementBotonAddC);
         driver.findElement(elementBotonAddC).click();
     }
 
     public void clickBotonPrcederPago() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         WebElement element = wait.until(ExpectedConditions.elementToBeClickable(elementBotonProcederPago));
+        drawBorder(elementBotonProcederPago);
         driver.findElement(elementBotonProcederPago).click();
     }
 
     public void setRfc(String rfc) {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         System.out.println(driver.findElement(By.name("titular_rfc")));
+        drawBorder(By.name("titular_rfc"));
         driver.findElement(By.name("titular_rfc")).sendKeys(rfc);
     }
 
